@@ -7,7 +7,7 @@ import { UserLog } from "./UserLogs";
 export abstract class Base extends BaseEntity {
   //uuid
   // @Field() //SDL type inout interface GRAPHQL API
-  // @PrimaryGeneratedColumn("uuid")
+  // @PrimaryGeneratedColumn("uuid") ///
   // Id: string;
 
   @Field(() => UserLog, { nullable: true })
