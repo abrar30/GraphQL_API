@@ -10,8 +10,25 @@ import { createConnection } from "typeorm";
 import { SubscriptionUsersLoader } from "./modules/subscription/account/DataLoader";
 import { SubscriptionUserEntity } from "./modules/subscription/user/UserEntity";
 import { createRefreshToken, createAccessToken } from "./utils/createTokens";
+if (process.env.NODE_ENV === "staging") {
+  require("custom-env").env("staging");
+} else if (process.env.NODE_ENV === "prod") {
+  require("custom-env").env("prod");
+} else {
+  require("custom-env").env("dev");
+}
+
+// Entry  Point
 const server = async () => {
-  const { ENDPOINT, ENDPOINT_PORT, ENDPOINT_PATH, ENDPOINT_CORS } = process.env;
+  const {
+    APP_ENV,
+    APP_Name,
+    ENDPOINT,
+    ENDPOINT_PORT,
+    ENDPOINT_PATH,
+    ENDPOINT_CORS,
+  } = process.env;
+  console.log(APP_ENV, APP_Name, ENDPOINT_PORT, "LOL");
   //Establish psql conn
   await createConnection();
 

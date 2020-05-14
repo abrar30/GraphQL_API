@@ -5,7 +5,10 @@
   "author": "ifca",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node-dev --respawn src/index.ts"
+    "start": "ts-node-dev --respawn src/index.ts",
+    "staging": "SET \"NODE_ENV=staging\" && ts-node-dev --respawn src/index.ts",
+    "dev": " SET \"NODE_ENV=dev\" && ts-node-dev --respawn src/index.ts",
+    "prod": "SET \"NODE_ENV=prod\" && ts-node-dev --respawn src/index.ts"
   },
   "dependencies": {
     "@apollo/gateway": "^0.16.0",
@@ -13,6 +16,7 @@
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "custom-env": "^2.0.1",
     "dataloader": "^2.0.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
