@@ -19,7 +19,7 @@
     "custom-env": "^2.0.1",
     "dataloader": "^2.0.0",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.1.0",
     "reflect-metadata": "^0.1.13",
